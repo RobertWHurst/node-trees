@@ -1,0 +1,17 @@
+{
+  "name": "node-tree",
+  "version": "0.0.1",
+  "main": "./main.js",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "author": {
+    "name": "Robert Hurst",
+    "email": "robertwhurst@gmail.com"
+  }
+}
