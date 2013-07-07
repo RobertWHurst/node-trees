@@ -1,6 +1,7 @@
 node-trees
 ==========
 
+[![Build Status](https://travis-ci.org/RobertWHurst/node-trees.png?branch=master)](https://travis-ci.org/RobertWHurst/node-trees)
 [![NPM version](https://badge.fury.io/js/node-trees.png)](http://badge.fury.io/js/node-trees)
 
 [![Endorse](http://api.coderwall.com/robertwhurst/endorsecount.png)](http://coderwall.com/robertwhurst)
