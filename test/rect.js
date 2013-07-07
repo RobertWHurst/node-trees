@@ -1,4 +1,4 @@
-var Rect = require('../').Rect;
+var Rect = require('../').QuadTree.Rect;
 var should = require('should');
 
 
