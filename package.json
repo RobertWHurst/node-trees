@@ -13,5 +13,9 @@
   "author": {
     "name": "Robert Hurst",
     "email": "robertwhurst@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RobertWHurst/node-tree.git"
   }
 }
