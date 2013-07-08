@@ -1,4 +1,3 @@
-
 node-trees
 ==========
 
@@ -25,11 +24,11 @@ Require it
 Quad tree
 ---------
 
-Quad trees are great data structures for 2d positional data. When the quad tree is created, it contains a single node. As data is inserted and the contents of the node grow until a threshhold is reached. Once the threshhold is reached, the node splits into four smaller nodes, one for each quadrant of the original node. This process also occurs in the smaller nodes. As more and more data is added, the tree grows deaper and deaper until a node can no longer splitting. Nodes that are ether to small, or to deap are prevented from splitting.
+Quad trees are great data structures for 2d positional data. When the quad tree is created, it contains a single node. As data is inserted and the contents of the node grow until a threshold is reached. Once the threshold is reached, the node splits into four smaller nodes, one for each quadrant of the original node. This process also occurs in the smaller nodes. As more and more data is added, the tree grows deeper and deeper until a node can no longer be split. Nodes that are either too small, or too deep are prevented from splitting.
 
 ### How to use a quad tree
 
-Quad trees are great for indexing and storing large amounts of 2d spacal elements. To demonstrate how to use then lets start with an example. Lets say we have a map with a handful of locations marked on it. Each location has an `x`, `y`, `width`, and `height`.
+Quad trees are great for indexing and storing large amounts of 2d spacial elements. To demonstrate how to use them let's start with an example. Let's say we have a map with a handful of locations marked on it. Each location has an `x`, `y`, `width`, and `height`.
 
 Without a quad tree we might store our data in an array.
 
@@ -55,7 +54,7 @@ Now lets suppose we want to render some of the locations to the screen. In order
 		}
 	}
 
-This is fine when there are only a few locations, but as the number of locations on the map increase the above code becomes less and less efficent. Eventually this loop will become a marjor preformance problem.
+This is fine when there are only a few locations, but as the number of locations on the map increase the above code becomes less and less efficent. Eventually this loop will become a major performance problem.
 
 The solution is a quad tree instead of an array. Each location gets inserted into the tree
 using its location as a key.
@@ -69,7 +68,7 @@ We can get all the locations within the view by asking the locations quad tree f
 
 	var visibleLocations = locations.get({ x: view.x, y: view.y, width: view.width, height: view.height });
 	
-Unlike with the array, the quad tree does not slow to a crawl when large amounts of data are inserted. Instead the quad tree only loops over the locations within the view area. I does not require a checking every location.
+Unlike with the array, the quad tree does not slow to a crawl when large amounts of data are inserted. Instead the quad tree only loops over the locations within the view area. It does not require checking every location.
 
 
 Docs
@@ -90,8 +89,8 @@ Creates a new QuadTree instance.
 | Argument Name | Description |
 | - | - |
 | size | The inital height and width of the QuadTree instance. Should be larger than the height/width of the area most items in the tree occupy. May help reduce tree growth. |
-| maxLeaf | The maximum number of leafs allowed within a node. Once exeeded the containing node splits into four, and the leafs are distributed into each. |
-| maxDepth | The maximum depth of the tree. Once a node reaches the `maxDepth` it can no longer split. Instead it will continue to grow as more leafs are inserted into it. |
+| maxLeaf | The maximum number of leaves allowed within a node. Once exceeded the containing node splits into four, and the leaves are distributed into each new node. |
+| maxDepth | The maximum depth of the tree. Once a node reaches the `maxDepth` it can no longer split. Instead it will continue to grow as more leaves are inserted into it. |
 | x | The `x` offset of the tree. If most of your items occupy a specific area setting the `x` may help reduce tree growth. |
 | y | The `y` offset of the tree. If most of your items occupy a specific area setting the `y` may help reduce tree growth. |
 
@@ -99,23 +98,23 @@ Creates a new QuadTree instance.
 
 	insert(Rect rect[, * data = undefined])
 	
-Adds a rectangle, and optionally associated data, to a QuadTree instance. Takes a Rect instance (or and object with `x`, `y`, `width`, `height` properties) as a key, and any data to link the retangle position to.
+Adds a rectangle, and optionally associated data, to a QuadTree instance. Takes a Rect instance (or and object with `x`, `y`, `width`, `height` properties) as a key, and any data to link the rectangle position to.
 
 | Argument Name | Description |
 | - | - |
-| rect | A retangle; Rect instance or an object containing an `x`, `y`, `width`, `height`. This will be the location of the rectangle within the tree. |
-| data | Data to associate with the rectangle. Can litterally be anything you want. |
+| rect | A rectangle; Rect instance or an object containing an `x`, `y`, `width`, `height`. This will be the location of the rectangle within the tree. |
+| data | Data to associate with the rectangle. Can literally be anything you want. |
 
 ### get
 
 	get(Rect rect[, * data]) => Array results
 	
-Retrieves all rectanges and their associated data within a given rectanage. If a second argument is given, only rectanges this data that matches the second argument will be returned, allowing one to check the location of a rectangle.
+Retrieves all rectangles and their associated data within a given rectangle. If a second argument is given, only rectangles  that match the second arguments data object will be returned, allowing one to check the location of a rectangle.
 
 | Argument Name | Description |
 | - | - |
 | rect | A Rect instance or an object containing an `x`, `y`, `width`, `height`. This will be the location in the tree that will be searched for rectangles. |
-| data | only results with this data will be returned as results. This allows you to check the location of a rectange associated with a specific piece of data. |
+| data | only results with this data will be returned as results. This allows you to check the location of a rectangle associated with a specific piece of data. |
 
 ### remove
 
@@ -126,7 +125,7 @@ Exactly like `get` but the data returned as results is removed from the tree.
 | Argument Name | Description |
 | - | - |
 | rect | A Rect instance or an object containing an `x`, `y`, `width`, `height`. This will be the location in the tree that will be searched for rectangles. |
-| data | only results with this data will be returned as results. This allows you to check the location of a rectange associated with a specific piece of data. |
+| data | only results with this data will be returned as results. This allows you to check the location of a rectangle associated with a specific piece of data. |
 
 ### truncate
 
@@ -137,4 +136,4 @@ Truncate deletes all data in the tree.
 Credits
 -------
 
-I made this library to improve the preformance of a game engine I'm working on for Unicode Games. I'd like to share it with fellow devs. Feel free to fork this project and make your own changes.
+I made this library to improve the performance of a game engine I'm working on for Unicode Games. I'd like to share it with fellow devs. Feel free to fork this project and make your own changes.
