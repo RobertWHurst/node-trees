@@ -1,3 +1,4 @@
+
 node-trees
 ==========
 
@@ -87,7 +88,7 @@ Docs
 Creates a new QuadTree instance.
 
 | Argument Name | Description |
-| - | - |
+| --- | --- |
 | size | The inital height and width of the QuadTree instance. Should be larger than the height/width of the area most items in the tree occupy. May help reduce tree growth. |
 | maxLeaf | The maximum number of leaves allowed within a node. Once exceeded the containing node splits into four, and the leaves are distributed into each new node. |
 | maxDepth | The maximum depth of the tree. Once a node reaches the `maxDepth` it can no longer split. Instead it will continue to grow as more leaves are inserted into it. |
@@ -101,7 +102,7 @@ Creates a new QuadTree instance.
 Adds a rectangle, and optionally associated data, to a QuadTree instance. Takes a Rect instance (or and object with `x`, `y`, `width`, `height` properties) as a key, and any data to link the rectangle position to.
 
 | Argument Name | Description |
-| - | - |
+| --- | --- |
 | rect | A rectangle; Rect instance or an object containing an `x`, `y`, `width`, `height`. This will be the location of the rectangle within the tree. |
 | data | Data to associate with the rectangle. Can literally be anything you want. |
 
@@ -112,7 +113,7 @@ Adds a rectangle, and optionally associated data, to a QuadTree instance. Takes 
 Retrieves all rectangles and their associated data within a given rectangle. If a second argument is given, only rectangles  that match the second arguments data object will be returned, allowing one to check the location of a rectangle.
 
 | Argument Name | Description |
-| - | - |
+| --- | --- |
 | rect | A Rect instance or an object containing an `x`, `y`, `width`, `height`. This will be the location in the tree that will be searched for rectangles. |
 | data | only results with this data will be returned as results. This allows you to check the location of a rectangle associated with a specific piece of data. |
 
@@ -123,7 +124,7 @@ Retrieves all rectangles and their associated data within a given rectangle. If 
 Exactly like `get` but the data returned as results is removed from the tree.
 
 | Argument Name | Description |
-| - | - |
+| --- | --- |
 | rect | A Rect instance or an object containing an `x`, `y`, `width`, `height`. This will be the location in the tree that will be searched for rectangles. |
 | data | only results with this data will be returned as results. This allows you to check the location of a rectangle associated with a specific piece of data. |
 
