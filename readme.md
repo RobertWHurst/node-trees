@@ -1,4 +1,3 @@
-
 node-trees
 ==========
 
@@ -62,7 +61,8 @@ using its location as a key.
 
 	var locations = new QuadTree();
 	locations.insert({ x: 3455, y: 12711, width: 243, height: 299 }, { label: 'Home' id: 0 });
-	locations.insert({ x: -654, y: 2044, width: 600, height: 546 }, { label: 'Work' id: 1 });		locations.insert({ x: 31, y: 34127, width: 1091, height: 3117 }, { label: 'The Park' id: 2 });
+	locations.insert({ x: -654, y: 2044, width: 600, height: 546 }, { label: 'Work' id: 1 });
+	locations.insert({ x: 31, y: 34127, width: 1091, height: 3117 }, { label: 'The Park' id: 2 });
 	...
 
 We can get all the locations within the view by asking the locations quad tree for all locations within the view rectangle.
