@@ -1,6 +1,12 @@
 var BTree = require('../').BTree;
 var should = require('should');
 
+var log = function(subject) {
+    console.log(require('util').inspect(subject, {
+        depth: null,
+        colors: true
+    }));
+};
 
 describe('Leaf', function() {
 
@@ -103,7 +109,9 @@ describe('Node', function() {
         node = node.parent;
         node.insertLeaf(new BTree.Leaf(2, 'two'));
         
-        // console.log(require('util').inspect(node.parent.root, { depth: null }));
+        console.log('');
+        log(node.parent.root);
+        console.log('');
 
         node.nodes[0].nodes[0].leafs[0].key.should.equal(1);
         node.nodes[0].nodes[0].leafs[0].data.should.equal('one');
